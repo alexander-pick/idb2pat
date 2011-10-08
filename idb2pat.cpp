@@ -74,33 +74,6 @@ typedef struct tagPATOPTION {
     short chkbx;
 } PATOPTION;
 
-
-#ifndef NOPROTO
-// Source File: "crc16.cpp"
-// prototype for CCITT CRC16 function
-unsigned short crc16(unsigned char *,unsigned short);
-
-// Source File: "idb2pat.cpp"
-// prototype for the find_ref_loc() function.
-ea_t find_ref_loc(ea_t, ea_t);
-
-// prototype for the set varible bytes function.
-void set_v_bytes (std::vector<bool>&, int, int);
-
-// prototype for the make_pattern() function.
-void make_pattern(func_t*, FILE*, PATOPTION*);
-
-// prototype for the dialog
-PATOPTION* opt_diaolg(PATOPTION*);
-
-// prototype for get pattern file dialog.
-FILE* get_pat_file(void);
-
-// prototype for the primary run() function.
-void run(int);
-
-#endif
-
 // crc16 from flair
 
 #define POLY 0x8408
@@ -884,7 +857,7 @@ static int sample_callback(void * /*user_data*/, int event_id, va_list /*va*/)
 //
 int init(void)
 {
-  if ( inf.filetype == f_ELF ) return PLUGIN_SKIP;
+  //if ( inf.filetype == f_ELF ) return PLUGIN_SKIP;
 
 // Please uncomment the following line to see how the notification works
 //  hook_to_notification_point(HT_UI, sample_callback, NULL);
